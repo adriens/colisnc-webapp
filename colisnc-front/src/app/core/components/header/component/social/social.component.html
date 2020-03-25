@@ -1,0 +1,29 @@
+<mat-card [@flyInOut] fxLayout="row">
+
+    <div fxLayout="column" fxLayoutGap="25px">
+
+        <button mat-raised-button class="google" (click)="social('google')">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+                <img src="../../../../../../assets/icons/google.png"/>
+                <span>Connectez-vous avec Google</span>
+            </div>
+        </button>
+
+        <button mat-raised-button class="facebook" (click)="social('facebook')">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+                <img src="../../../../../../assets/icons/facebook.png"/>
+                <span>Connectez-vous avec Facebook</span>
+            </div>
+        </button>
+
+        <button mat-raised-button class="twitter">
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+                <img src="../../../../../../assets/icons/twitter.png"/>
+                <span>Connectez-vous avec Twitter</span>
+            </div>
+        </button>
+
+
+    </div>
+
+</mat-card>

@@ -1,0 +1,56 @@
+div{
+  font-size: 0.9em;
+}
+
+mat-card:hover{
+  cursor: pointer;
+}
+
+mat-card.enabled:hover{
+  background-color: #b7d4ee;
+}
+
+mat-icon.action{
+  font-size: 36px;
+  height: 36px;
+  width: 36px;
+}
+
+.selected{
+  background-color: #b7d4ee;
+}
+
+.disabled{
+  background-color: #EAECEE;
+  //border: 1px solid red;
+  cursor: not-allowed!important;
+  font-style: italic;
+}
+
+@media screen and (max-width: 1024px) {
+
+  mat-card{
+    font-size: 0.8em;
+    padding: 8px;
+  }
+
+  mat-icon{
+    font-size: 12px;
+    height: 12px;
+    width: 12px;
+  }
+
+  mat-icon.action{
+    font-size: 24px;
+    height: 24px;
+    width: 24px;
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+
+  mat-card{
+    font-size: 0.6em;
+  }
+}

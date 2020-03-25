@@ -1,0 +1,83 @@
+
+<div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="5px">
+
+    <app-header [showFavoris]=""></app-header>
+
+    <div *ngIf="showMap" fxLayout="row" fxLayoutGap="2px" fxLayoutAlign="space-around stretch" style="padding: 0px 5px;">
+
+
+        <mat-card fxLayout="column" fxLayoutGap="20px" class="left" fxFlex="60">
+
+            <mat-card style="border-radius: 0px;">
+                <mat-form-field appearance="outline">
+                    <mat-label>Numéro de colis</mat-label>
+                    <input #test matInput (keyup.enter)="search(test.value)">
+                    <mat-icon matSuffix (click)="search(test.value)">search</mat-icon>
+                </mat-form-field>
+            </mat-card>
+
+            <div class="spinner" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px" *ngIf="loading">
+                <mat-spinner></mat-spinner>
+                <div>Chargement des données</div>
+            </div>
+
+            <div *ngIf="colis.length > 0" class="step-details" fxLayout="column" fxLayoutGap="5px">
+                <div *ngFor="let coli of colis">
+                    <div (click)="show(coli)"><app-step [step]="coli" [selected]="selected"></app-step></div>
+                </div>
+            </div>
+
+            <div *ngIf="colis.length === 0 && !loading && showColis" class="step-details" fxLayout="column" fxLayoutGap="5px">
+                <mat-card fxLayout="row" fxLayoutGap="25px" fxLayoutAlign="center center">
+                    <span><b>Aucune étapes touvées pour ce numéro de colis</b></span>
+                </mat-card>
+            </div>
+
+
+
+        </mat-card>
+
+
+        <div id="map" fxFlex>
+            <agm-map #AgmMap [latitude]="lat" [longitude]="lng" [fitBounds]="true" [zoom]="zoom">
+                <agm-marker *ngFor="let p of markers" [latitude]="p.lat" [longitude]="p.lng" [iconUrl]="p.icon" [agmFitBounds]="true"></agm-marker>
+            </agm-map>
+        </div>
+
+    </div>
+
+    <div *ngIf="!showMap" fxFlex fxLayout="row" fxLayoutGap="2px" fxLayoutAlign="space-around stretch" style="padding: 0px 5px;">
+
+
+        <mat-card fxLayout="column" fxLayoutGap="20px" class="left">
+
+            <mat-card style="border-radius: 0px;">
+                <mat-form-field appearance="outline">
+                    <mat-label>Numéro de colis</mat-label>
+                    <input #test matInput (keyup.enter)="search(test.value)">
+                    <mat-icon matSuffix (click)="search(test.value)">search</mat-icon>
+                </mat-form-field>
+            </mat-card>
+
+            <div class="spinner" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px" *ngIf="loading">
+                <mat-spinner></mat-spinner>
+                <div>Chargement des données</div>
+            </div>
+
+            <div *ngIf="colis.length > 0" class="step-details" fxLayout="column" fxLayoutGap="5px">
+                <div *ngFor="let coli of colis">
+                    <div (click)="show(coli)"><app-step [step]="coli" [selected]="selected"></app-step></div>
+                </div>
+            </div>
+
+            <div *ngIf="colis.length === 0 && !loading && showColis" class="step-details" fxLayout="column" fxLayoutGap="5px">
+                <mat-card fxLayout="row" fxLayoutGap="25px" fxLayoutAlign="center center">
+                    <span><b>Aucune étapes touvées pour ce numéro de colis</b></span>
+                </mat-card>
+            </div>
+
+        </mat-card>
+
+    </div>
+</div>
+

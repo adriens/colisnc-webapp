@@ -1,0 +1,5 @@
+<mat-card [@flyInOut] fxLayout="row" fxLayout="column" fxLayoutGap="5px">
+
+    <div *ngFor="let fav of (favoris | async)" (click)="click(fav)">{{ fav }}</div>
+
+</mat-card>

@@ -1,0 +1,82 @@
+#map {
+  height: calc(100vh - 111px);
+  width: 100%;
+}
+agm-map {
+  height: 100%;
+}
+
+mat-card.left{
+  background-color: #D5D8DC;
+  padding: 10px 0px;
+  border-radius: 0px;
+}
+
+mat-icon{
+  cursor: pointer;
+
+}
+
+.material-icons{
+  font-size: 30px;
+}
+
+mat-card, mat-form-field{
+  width: 100%;
+}
+
+::ng-deep .mat-form-field-wrapper{
+  padding-bottom: 0px!important;
+}
+
+table {
+  cursor: pointer;
+
+}
+
+table td{
+  line-height: 0px;
+}
+
+.no{
+  font-style: italic;
+  color: lightgray;
+}
+
+.spinner{
+  height: 240px;
+  border-radius: 0px;
+  border: 0px;
+}
+
+div.step-details{
+  height: calc(100vh - 235px);
+  overflow-y: auto;
+  padding: 0px 20px;
+}
+
+@media screen and (max-width: 1024px) {
+
+  ::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
+  ::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+  ::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.1em) scale(.75);
+    width: 133.33333%;
+  }
+
+  mat-card{padding: 8px;}
+
+  div.step-details{
+    padding: 0px 5px;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  div.step-details{
+    padding: 0px 5px;
+  }
+}
+
+
+

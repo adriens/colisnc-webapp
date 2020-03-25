@@ -1,0 +1,11 @@
+apply plugin: 'eclipse'
+apply plugin: 'java'
+apply plugin: 'maven'
+task zip(type: Zip) {
+    from 'dist/'
+    include '*'
+    include '*/*' //to include contents of a folder present inside Reports directory
+    include '*/*/*' //to include contents of a folder present inside Reports directory
+    include '*/*/*/*' //to include contents of a folder present inside Reports directory
+    archiveName projectName + '-' + version + '.zip'
+}

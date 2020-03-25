@@ -1,0 +1,115 @@
+@import '../node_modules/@angular/material/theming';
+@include mat-core();
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-easyboxprimary: (
+  50 : #c5bcc5,
+  100 : #a194a1,
+  200 : #877687,
+  300 : #615561,
+  400 : #504650,
+  500 : #403840,
+  600 : #302a30,
+  700 : #1f1b1f,
+  800 : #0f0d0f,
+  900 : #000000,
+  A100 : #d4a3d4,
+  A200 : #b45db4,
+  A400 : #684368,
+  A700 : #514051,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #ffffff,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$md-easyboxwarning: (
+  50 : #fcc7cd,
+  100 : #f97e8c,
+  200 : #f7485c,
+  300 : #ed0b25,
+  400 : #cf0921,
+  500 : #b2081c,
+  600 : #950717,
+  700 : #770513,
+  800 : #5a040e,
+  900 : #3d030a,
+  A100 : #ffbac2,
+  A200 : #ff5468,
+  A400 : #ed001c,
+  A700 : #d0041c,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #ffffff,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$md-easyboxaccent: (
+  50 : #eef5fb,
+  100 : #d4e5f5,
+  200 : #b7d4ee,
+  300 : #9ac2e7,
+  400 : #85b5e1,
+  500 : #6fa8dc,
+  600 : #67a0d8,
+  700 : #5c97d3,
+  800 : #528dce,
+  900 : #407dc5,
+  A100 : #ffffff,
+  A200 : #e3efff,
+  A400 : #b0d3ff,
+  A700 : #96c4ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+
+$custom-theme-primary: mat-palette($md-easyboxprimary);
+$custom-theme-accent: mat-palette($md-easyboxaccent);
+$custom-theme-warn: mat-palette($md-easyboxwarning);
+
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+
+@include angular-material-theme($custom-theme);
+
+$primary: mat-color($custom-theme-primary);
+$accent: mat-color($custom-theme-accent);
+$warn: mat-color($custom-theme-warn);

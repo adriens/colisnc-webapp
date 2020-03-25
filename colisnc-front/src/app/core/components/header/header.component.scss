@@ -1,0 +1,55 @@
+mat-card{
+  border-radius: 0px;
+  padding: 5px 20px;
+  background-color: black;
+  color: white;
+}
+
+span.title{
+  font-size: 2em;
+  font-family: auto;
+  font-weight: bold;
+}
+
+button{
+  border: none;
+  outline: none;
+}
+
+mat-icon{
+  cursor: pointer;
+  color: white;
+}
+
+mat-icon.login{
+  height: 36px;
+  width: 36px;
+  font-size: 36px;
+}
+
+app-social{
+  position: absolute;
+  top: 90px;
+  z-index: 1;
+  right: 50px;
+}
+
+app-favoris{
+  position: absolute;
+  top: 90px;
+  z-index: 1;
+  right: 200px;
+}
+
+img.logo{height: 75px;}
+
+img.profil{height: 45px;}
+img.profil{border-radius: 50%;}
+
+@media screen and (max-width: 1024px) {
+  img.logo{height: 45px;}
+}
+
+@media screen and (max-width: 375px) {
+  img.logo{height: 45px;}
+}

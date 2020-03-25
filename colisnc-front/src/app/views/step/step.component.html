@@ -1,0 +1,25 @@
+<mat-card fxLayout="row" fxLayoutGap="25px" fxLayoutGap.xs="5px" fxLayoutGap.md="15px" fxLayoutAlign="start center" [class.selected]="selected === step.id && step.locValid" [class.disabled]="!step.locValid" [class.enabled]="step.locValid">
+
+    <mat-icon class="action" color="accent" *ngIf="step.locValid">{{ getIcon() }}</mat-icon>
+    <mat-icon class="action" color="warn" *ngIf="!step.locValid">{{ getIcon() }}</mat-icon>
+
+    <span fxFlex><b>{{ step.typeEvenement }}</b></span>
+
+    <div fxLayout="column" fxLayoutGap="5px" fxFlex="35">
+
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <mat-icon color="accent" *ngIf="step.locValid">home</mat-icon>
+            <mat-icon color="warn" *ngIf="!step.locValid">home</mat-icon>
+            <div>{{ step.localisation }}, {{ step.pays }}</div>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <mat-icon color="accent" *ngIf="step.locValid">date_range</mat-icon>
+            <mat-icon color="warn" *ngIf="!step.locValid">date_range</mat-icon>
+            <span>{{ step.date | date:'short' }}</span>
+        </div>
+    </div>
+
+
+</mat-card>
+

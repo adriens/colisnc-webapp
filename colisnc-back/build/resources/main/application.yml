@@ -1,0 +1,71 @@
+server:
+  port: 3456
+  servlet:
+    context-path: /api
+
+# BDD
+spring:
+  datasource:
+    platform: postgresql
+    driver-class-name: org.postgresql.Driver
+    #url: jdbc:postgresql://colisnc-db:5430/colisnc
+    url: jdbc:postgresql://188.165.247.173:7067/colisnc
+    username: colisnc
+    password: azerty
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        current_session_context_class: thread
+        format_sql: true
+        temp:
+          use_jdbc_metadata_defaults: false
+          jdbc:
+            lob:
+              non_contextual_creation: true
+
+providers-config:
+  url-callback: "https://colisnc.redstone.nc/access"
+  openid-providers:
+    google:
+      id: "101603467542-vdmhunkttojbc4ahkpa4f165a2vrssjg.apps.googleusercontent.com"
+      secret: "4N_5mlxFwAKNkH4EmMgnPmE3"
+      urlCode: "https://accounts.google.com/o/oauth2/auth"
+      urlToken: "https://www.googleapis.com/oauth2/v4/token"
+    yahoo:
+      id: "dj0yJmk9VHpPcUM4VHJ0QVN0JmQ9WVdrOU5Ya3pVV2xPTTJVbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1iMw--"
+      secret: "6770c1eee164411420606ba60a70f22bd128f617"
+      urlCode: "https://api.login.yahoo.com/oauth2/request_auth"
+      urlToken: "https://api.login.yahoo.com/oauth2/get_token"
+    flickr:
+      id: "a7a832b5fd422def33defa6355b959b9"
+      secret: "5cf4c7d1c86a2284"
+      urlCode: "https://api.login.yahoo.com/oauth2/request_auth"
+      urlToken: "https://api.login.yahoo.com/oauth2/get_token"
+    microsoft:
+      id: "fdb47617-5e85-4e6e-8807-45f68abdc934"
+      secret: "pxQ4Li5iNOCFic05hkeyBBbjeremy"
+      urlCode: "https://login.microsoftonline.com/f8cdef31-a31e-4b4a-93e4-5f571e91255a/oauth2/authorize"
+      urlToken: "https://login.microsoftonline.com/f8cdef31-a31e-4b4a-93e4-5f571e91255a/oauth2/token"
+  externe-providers:
+    facebook:
+      id: "641663536007142"
+      secret: "4f6ad9ec2832d60795840aa917eadcad"
+      urlCode: "https://www.facebook.com/dialog/oauth"
+      urlToken: "https://graph.facebook.com/v2.3/oauth/access_token"
+      urlProfil: "https://graph.facebook.com/me"
+    linkedin:
+      id: "7553ejwz1vphb0"
+      secret: "wtWMUEjig455maS6"
+      urlCode: "https://www.linkedin.com/oauth/v2/authorization"
+      urlToken: "https://www.linkedin.com/oauth/v2/accessToken"
+      urlProfil: "https://api.linkedin.com/v1/people/~:(id,formatted-name,email-address)"
+    twitter:
+      id: "714988800343216128-Myj9PBkc84DRry5bgfM7ffPiyNHnjlz"
+      secret: "q9PrW2JvSPrTgvQOMxr2xURoVaHC2No46HrQ38tNCA9Pm"
+      urlCode: "https://api.twitter.com/oauth/authenticate"
+      urlToken: "https://api.twitter.com/oauth/access_token"
+      urlProfil: "https://api.twitter.com/1.1/account/verify_credentials.json"

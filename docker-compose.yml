@@ -1,0 +1,38 @@
+version: "2"
+
+services:
+
+  colisnc-db:
+    container_name: colisnc-db
+    image: postgres:9.4.5
+    environment:
+      POSTGRES_USER: colisnc
+      POSTGRES_PASSWORD: azerty
+      POSTGRES_DB: colisnc
+    ports:
+    - 7067:5432
+    volumes:
+    - ./postgres-data:/var/lib/postgresql/data
+
+  colisnc-back:
+    container_name: colisnc-back
+    restart: always
+    build: colisnc-back/.
+    working_dir: /app
+    command: java -jar "/app.jar"
+    depends_on:
+    - colisnc-db
+    links:
+    - colisnc-db
+
+  colisnc-front:
+    container_name: colisnc-front
+    build: colisnc-front/.
+    ports:
+      - 7066:80
+    depends_on:
+      - colisnc-back
+    links:
+      - colisnc-back
+
+

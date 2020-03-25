@@ -1,0 +1,27 @@
+button{
+    height: 50px;
+    color: white;
+}
+
+button.google{
+    background-color: #d0462b;
+}
+
+button.facebook{
+    background-color: #48588b;
+}
+
+button.twitter{
+    background-color: #53a9db;
+}
+
+
+
+.mat-raised-button{
+    line-height: 24px;
+}
+
+img{
+    height: 36px;
+}
+

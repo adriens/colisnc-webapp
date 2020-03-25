@@ -1,0 +1,49 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+# BDD
+spring:
+  datasource:
+    platform: postgresql
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/colis
+    username: colis
+    password: azerty
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      current_session_context_class: thread
+      format_sql: true
+      temp:
+        use_jdbc_metadata_defaults: false
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
+providers-config:
+  url-callback: "http://localhost:4200/access"
+  openid-providers:
+    google:
+      id: "101603467542-vdmhunkttojbc4ahkpa4f165a2vrssjg.apps.googleusercontent.com"
+      secret: "4N_5mlxFwAKNkH4EmMgnPmE3"
+      urlCode: "https://accounts.google.com/o/oauth2/auth"
+      urlToken: "https://www.googleapis.com/oauth2/v4/token"
+  externe-providers:
+    facebook:
+      id: "641663536007142"
+      secret: "4f6ad9ec2832d60795840aa917eadcad"
+      urlCode: "https://www.facebook.com/dialog/oauth"
+      urlToken: "https://graph.facebook.com/v2.3/oauth/access_token"
+      urlProfil: "https://graph.facebook.com/me"
+    twitter:
+      id: "714988800343216128-FIkAzmNIiG5zKvfpmRIdYoEGm1Pwa8D"
+      secret: "5ogO0JAFBujL9jWvOJVPGFFsUncmNszkNyLB9sXv8BQ0y"
+      urlCode: "https://api.twitter.com/oauth/authenticate"
+      urlToken: "https://api.twitter.com/oauth/access_token"
+      urlProfil: "https://api.twitter.com/1.1/account/verify_credentials.json"

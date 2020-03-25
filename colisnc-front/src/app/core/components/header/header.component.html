@@ -1,0 +1,24 @@
+<mat-card fxLayout="row" fxLayoutAlign="start center">
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px" fxFlex>
+        <img class="logo" src="../../../../assets/images/icone_transparent.png">
+        <span fxFlex class="title" *ngIf="!smallMode">Mes Colis NC</span>
+    </div>
+
+    <div *ngIf="(user | async)" class="back" fxLayout fxLayoutAlign="center center" fxLayoutGap="15px">
+        <mat-icon class="favoris" (click)="showFavoris = !showFavoris">stars</mat-icon>
+        <img class="profil" src="{{ (user | async).picture }}"/>
+        <span *ngIf="!smallMode">{{ (user | async).name }}</span>
+        <mat-icon (click)="logout()">power_settings_new</mat-icon>
+    </div>
+
+    <app-favoris *ngIf="showFavoris" (eventColis)="goTo($event)"></app-favoris>
+    <app-social *ngIf="showSocial" (eventClose)="showSocial = !$event"></app-social>
+    <mat-icon class="login" *ngIf="!(user | async)" (click)="showSocial = !showSocial">account_circle</mat-icon>
+    <!--div *ngIf="(favoris | async)">
+        <button mat-button [matMenuTriggerFor]="menu" >Favoris</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item *ngFor="let f of (favoris | async)" (click)="goTo(f)">{{ f }}</button>
+        </mat-menu>
+    </div-->
+
+</mat-card>
